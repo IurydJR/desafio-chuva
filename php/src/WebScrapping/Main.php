@@ -2,6 +2,9 @@
 
 namespace Chuva\Php\WebScrapping;
 
+require_once 'Scrapper.php';
+require_once 'Spouter.php';
+
 /**
  * Runner for the Webscrapping exercice.
  */
@@ -17,7 +20,8 @@ class Main {
     $data = (new Scrapper())->scrap($dom);
 
     // Write your logic to save the output file bellow.
+    $data = (new Spouter())->spouter($data);
     print_r($data);
   }
-
 }
+Main::run();
